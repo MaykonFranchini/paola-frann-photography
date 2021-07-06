@@ -1,5 +1,5 @@
 .banner {
-    background-color: #964a3f;
+    background-color:$terracota;
     height: 80vh;
     display:flex;
     justify-content: space-evenly;
@@ -19,4 +19,25 @@
 #banner-typed-text {
     margin-top: 5px;
     font-size: 25px;
+}
+
+.footer {
+    height: 10vh;
+    background-color:$terracota;
+    ul {
+        list-style: none;
+        display: flex;
+    }
+    li {
+        margin-right: 30px;
+        font-size: 30px;
+    }
+    a {
+        color:rgb(195, 149, 142);
+        text-decoration: none;
+    }
+    a:hover {
+        color:rgba(189, 102, 88, .71);
+        text-decoration: none;
+    }
 }
