@@ -1,0 +1,15 @@
+<div class="book">
+    <div class="container">
+        <h1 class="book-title">Photo Sessions</h1>
+        <div class="cards">
+            <% @books.each do |book| %>
+                <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/id/1027/500/300zaazAZ)">
+                    <div>    
+                        <h2><%= book.name %></h2>
+                        <%= link_to "See more", book_path(book) %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
