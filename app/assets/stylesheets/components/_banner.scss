@@ -1,0 +1,22 @@
+.banner {
+    background-color: #964a3f;
+    height: 80vh;
+    display:flex;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+}
+
+.image-div {
+    width: 700px;
+    img {
+        border-radius: 100px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+#banner-typed-text {
+    margin-top: 5px;
+    font-size: 25px;
+}

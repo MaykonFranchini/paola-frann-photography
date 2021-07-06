@@ -1,0 +1,13 @@
+.btn-banner {
+    background-color: rgba(189, 102, 88, 1);
+    padding: 15px 45px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+        color:white;
+        text-decoration: none;
+        background-color: rgba(189, 102, 88, .71);
+    }
+}
