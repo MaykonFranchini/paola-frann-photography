@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
     <p class="logo"><i class="fas fa-camera-retro"></i> Paola Frann</p>
     <% end %>
 
@@ -14,14 +14,14 @@
         <%= link_to "About", "#", class: "nav-link" %>
       </li>
       <li class="nav-item" >
-      <%= link_to "Book", "#", class: "nav-link" %>
-      </li>
+      <%= link_to "Book", books_path, class: "nav-link" %>
+      </li> 
       <li class="nav-item" >
       <%= link_to "Contact", "#", class: "nav-link" %>
       </li>
       <% if user_signed_in? %>
         <li class="nav-item ">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "My Orders", "#", class: "nav-link" %>

@@ -1,12 +1,30 @@
-.book {
-    padding-top: 70px;
+.book-index, .book-show {
+    min-height:100vh;
+    padding-top: 100px;
+    h1 {
+        margin-bottom: 30px;
+    }
+}
+.book-index {
     background-color: $areia;
 }
-
-.book-title {
-    text-align: center;
+.book-show {
+    background-color: $musgreen;
+    p {
+        font-size: 20px;
+    }
+    img {
+        border-radius: 10px;
+    }
+}
+.description {
+    background-color: rgba(255,255,255,.3);
+    border-radius: 10px;
 }
 
+.book-title, .show-title {
+    text-align: center;
+}
 
 .main-body{
     position: relative;
