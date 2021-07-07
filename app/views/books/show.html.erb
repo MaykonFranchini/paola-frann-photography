@@ -14,7 +14,10 @@
                 <p>£ <%= @book.price %></p>
                 <p>Delivery estimate: <%= @book.delivery_estimate %> days</p>
             </div>
-            <%= link_to "Book now", "#", class:"btn-book-show" %>
+            <%= simple_form_for (@order) do |f| %>
+                <%= f.input :booking_date, as: :string, required: false, class: "datepicker" %>
+                <%= f.button :submit %>
+            <% end %> 
         </div>
     </div>
 
