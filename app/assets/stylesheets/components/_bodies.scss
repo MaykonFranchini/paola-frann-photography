@@ -9,7 +9,7 @@
     background-color: $areia;
 }
 .book-show {
-    background-color: $musgreen;
+    background-color: $newgray;
     p {
         font-size: 20px;
     }
@@ -18,12 +18,26 @@
     }
 }
 .description {
-    background-color: rgba(255,255,255,.3);
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
     border-radius: 10px;
+}
+.description-text, .booking-info {
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 3px 2px 2px gray;
+    padding: 20px;
 }
 
 .book-title, .show-title {
     text-align: center;
+}
+.main-img, .small-images  {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
 }
 
 .main-body{

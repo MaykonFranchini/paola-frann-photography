@@ -33,6 +33,13 @@ gem 'flatpickr'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
+
+# stripe payment
+gem 'stripe'
+# stripe webhooks to update order status
+gem 'stripe_event'
+
+gem 'money-rails'
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_07_030439) do
+ActiveRecord::Schema.define(version: 2021_07_08_091801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,31 +18,25 @@ ActiveRecord::Schema.define(version: 2021_07_07_030439) do
   create_table "books", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "price"
     t.integer "delivery_estimate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "sku"
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "status", default: "pending"
+    t.string "state"
+    t.string "book_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
     t.bigint "user_id", null: false
     t.bigint "book_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.date "booking_date"
+    t.string "booking_date"
     t.index ["book_id"], name: "index_orders_on_book_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.string "title"
-    t.string "content"
-    t.integer "rating"
-    t.bigint "order_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["order_id"], name: "index_reviews_on_order_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,5 +57,4 @@ ActiveRecord::Schema.define(version: 2021_07_07_030439) do
 
   add_foreign_key "orders", "books"
   add_foreign_key "orders", "users"
-  add_foreign_key "reviews", "orders"
 end
