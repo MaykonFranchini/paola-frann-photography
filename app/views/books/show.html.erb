@@ -1,23 +1,31 @@
 <div class="book-show">
     <div class= "container">
         <h1 class="show-title"><%= @book.name %></h1>
-        <div class="row details">
-        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="details">
+        <div class="main-img">
             <img class="d-block w-100" src="https://picsum.photos/id/1027/500/300" alt="Book">
+            <div class="small-images">
+                <img class="d-block w-100" src="https://picsum.photos/id/1027/500/300" alt="Book">
+                <img class="d-block w-100" src="https://picsum.photos/id/1027/500/300" alt="Book">
+                <img class="d-block w-100" src="https://picsum.photos/id/1027/500/300" alt="Book">
+                <img class="d-block w-100" src="https://picsum.photos/id/1027/500/300" alt="Book">
+            </div>
         </div>
 
-        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 description">
-            <div class="d-flex align-items-center p-3 ">
+        <div class="description">
+            <div class="description-text">
                 <p><%= @book.description %></p>
             </div>
-            <div class="price-details d-flex justify-content-around">
-                <p>£ <%= @book.price %></p>
-                <p>Delivery estimate: <%= @book.delivery_estimate %> days</p>
+            <div class="booking-info">
+                <div class="d-flex justify-content-between mb-3">
+                    <p>£ <%= @book.price %></p>
+                    <p>Delivery estimate: <%= @book.delivery_estimate %> days</p>
+                </div>
+                <%= simple_form_for (@order) do |f| %>
+                    <%= f.input :booking_date, as: :string, required: false, placeholder: "Select your date", input_html: {class: "datepicker"} %>
+                    <%= f.button :submit, class: "btn-booking-form" %>
+                <% end %>
             </div>
-            <%= simple_form_for (@order) do |f| %>
-                <%= f.input :booking_date, as: :string, required: false, class: "datepicker" %>
-                <%= f.button :submit %>
-            <% end %> 
         </div>
     </div>
 
