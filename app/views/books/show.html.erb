@@ -18,11 +18,12 @@
             </div>
             <div class="booking-info">
                 <div class="d-flex justify-content-between mb-3">
-                    <p>£ <%= @book.price %></p>
+                    <p><%= humanized_money_with_symbol(@book.price) %></p>
                     <p>Delivery estimate: <%= @book.delivery_estimate %> days</p>
                 </div>
-                <%= simple_form_for [@book,@order] do |f| %>
+                <%= simple_form_for (@order) do |f| %>
                     <%= f.input :booking_date, as: :string, required: true, placeholder: "Select your date", input_html: {class: "datepicker"} %>
+                    <%= hidden_field_tag 'book_id', @book.id %>
                     <%= f.button :submit, class: "btn-booking-form" %>
                 <% end %>
             </div>

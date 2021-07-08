@@ -1,4 +1,5 @@
 class Book < ApplicationRecord
-    has_many :orders
-    validates :name, :description, :price, :delivery_estimate, presence: true 
+    monetize :price_cents
+    has_many :orders, dependent: :destroy
+    validates :name, :description, :delivery_estimate, presence: true 
 end
