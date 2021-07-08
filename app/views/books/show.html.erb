@@ -21,8 +21,8 @@
                     <p>£ <%= @book.price %></p>
                     <p>Delivery estimate: <%= @book.delivery_estimate %> days</p>
                 </div>
-                <%= simple_form_for (@order) do |f| %>
-                    <%= f.input :booking_date, as: :string, required: false, placeholder: "Select your date", input_html: {class: "datepicker"} %>
+                <%= simple_form_for [@book,@order] do |f| %>
+                    <%= f.input :booking_date, as: :string, required: true, placeholder: "Select your date", input_html: {class: "datepicker"} %>
                     <%= f.button :submit, class: "btn-booking-form" %>
                 <% end %>
             </div>
