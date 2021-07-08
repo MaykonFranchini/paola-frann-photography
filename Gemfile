@@ -36,6 +36,8 @@ gem 'simple_form'
 
 # stripe payment
 gem 'stripe'
+# stripe webhooks to update order status
+gem 'stripe_event'
 
 gem 'money-rails'
 group :development, :test do  gem 'pry-byebug'
