@@ -33,7 +33,40 @@
       </div>
 
       <div class="invoice-part-2">
+        <table>
+          <tr>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Unit price</th>
+            <th>Amount</th>
+          </tr>
+          <tr>
+            <td><%= @order.book.name %></td>
+            <td>1</td>
+            <td><%= humanized_money_with_symbol @order.book.price * 0.8 %></td>
+            <td><%= humanized_money_with_symbol @order.book.price * 0.8 %></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Subtotal</td>
+            <td><%= humanized_money_with_symbol @order.book.price * 0.8 %></td>
+          </tr>
 
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Tax (20%)</td>
+            <td><%= humanized_money_with_symbol @order.book.price * 0.2 %></td>
+          </tr>
+
+          <tr class="total">
+          <td></td>
+          <td></td>
+          <td><strong>Total</strong></td>
+          <td><strong><%= humanized_money_with_symbol @order.book.price %></strong></td>
+        </tr>
+        </table>
       </div>
 
     </div>

@@ -20,3 +20,18 @@ p {
     background: rgb(151, 218, 218);
     padding: 20px;
   }
+
+  table {
+      margin-top: 30px;
+      width: 100%;
+  }
+  th, .total {
+    background: rgb(151, 218, 218);  
+  }
+  th, td {
+      text-align: center;
+      padding: 5px;
+  }
+  .subtotal {
+      border-top: 1px solid rgb(181, 173, 173);
+  }
