@@ -1,4 +1,4 @@
-.book-index, .book-show {
+.book-index, .book-show, .payment-new {
     min-height:100vh;
     padding-top: 100px;
     h1 {
@@ -27,7 +27,7 @@
 .description-text, .booking-info {
     border-radius: 10px;
     background-color: white;
-    box-shadow: 3px 2px 2px gray;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
     padding: 20px;
 }
 
