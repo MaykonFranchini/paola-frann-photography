@@ -1,15 +1,41 @@
-<div class="container">
-  <div class="row py-4">
-    <div class="col-md-3"><img class="d-block w-100" src="https://picsum.photos/id/1027/500/300" alt="Book"></div>
-    <div class="col">
-      <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
-      <ul class="list-unstyled">
-        <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
-        <li><strong>TEDDY</strong> <%= @order.book.name %> [<%= @order.book_sku %>]</li>
-        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
-        </li>
-      </ul>
-      <p>Estimated delivery in <strong><%= @order.book.delivery_estimate %> business days</strong></p>
+<div class="orders-show">
+  <div class="container">
+    <div class-"invoice">
+      <div class="invoice-header">
+        <p class="logo"><i class="fas fa-camera-retro"></i> Paola Frann</p>
+      </div>
+      <div class="invoice-part-1">
+      
+        <div class='address'>
+          <p><strong>Paola Frann</strong></p>
+          <p>London</p>
+          <p>United Kingdom</p>
+          <p>Phone: +44 xxxxx-xxxxx</p>
+          <p>Email: paolafrann@paolafrann.com</p>
+        </div>
+
+        <div class='invoice-details'>
+          <div class='invoice-detail'>
+            <p class="highlight-text">Invoice number: </p>
+            <p><%= @order.id %></p>
+          </div>
+
+          <div class='invoice-detail'>
+            <p class="highlight-text">Invoice date: </p>
+            <p><%= @order.created_at.strftime("%d/%m/%Y") %></p>
+          </div>
+
+          <div class='invoice-detail'>
+            <p class="highlight-text">Payment status: </p>
+            <p><%= @order.state %></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="invoice-part-2">
+
+      </div>
+
     </div>
   </div>
 </div>
