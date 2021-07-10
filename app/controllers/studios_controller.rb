@@ -1,6 +1,14 @@
 class StudiosController < ApplicationController
     def index
-        @studios = Studio.all
+        if params[:query].present?
+            @studio = Studio.search_by_address(params[:query])
+            if @studio.size === 0
+                @studios = Studio.all
+            else 
+                @studios = @studio
+            end
+        end
+        
     
         # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
         @markers = @studios.geocoded.map do |studio|

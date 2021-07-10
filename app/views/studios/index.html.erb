@@ -1,6 +1,27 @@
 <div class="studio-index">
     <div class="container">
         <h1 class="text-center">Find a studio near you</h1>
+        <div>
+            <%= form_tag studios_path, method: :get do %>
+                <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Find a studio"
+                %>
+                <%= submit_tag "Search", class: "btn btn-primary" %>
+            <% end %>
+            <div>
+                <% if @studio.count == 0 %>
+                    <h2>Sorry, There is no studios near you. Check on the map ours studios locations</h2>
+                <% else %>
+                <% @studio.each do |studio| %>
+                    <h4><%= studio.name %></h4>
+                    <p><%= studio.address %></p>
+                <% end %>
+                <% end %>
+            </div>
+        </div>
+
         <div id="map"
             style="width: 100%; height: 600px;"
             data-markers="<%= @markers.to_json %>"
