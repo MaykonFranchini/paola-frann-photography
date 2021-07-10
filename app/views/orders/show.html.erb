@@ -70,5 +70,10 @@
       </div>
 
     </div>
+    <div class="print-link-div">
+    <%= link_to 'Print', order_path(@order), class: 'btn-print', :onclick => 'window.print();return false;'%>
+    <%= link_to 'Home', root_path, class: 'btn-print' %>
+    </div>
   </div>
+ 
 </div>

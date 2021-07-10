@@ -42,3 +42,25 @@
     border-radius: 10px;
     width: 100%;
 }
+
+// order/show
+
+.btn-print {
+    background-color: rgb(151, 218, 218);
+    padding: 5px 45px;
+    border-radius: 5px;
+    width:50%;
+    color: white;
+    &:hover {
+        color: white;
+        text-decoration: none;
+        background-color: rgb(109,191,184);
+    }
+    @media print {
+          display: none;
+      }
+}
+
+.print-link-div {
+    margin-top: 30px;
+}
