@@ -12,7 +12,6 @@ const buildMap = (mapElement) => {
     });
   };
 
-
   const addMarkersToMap = (map, markers) => {
     markers.forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.info_window);
@@ -25,8 +24,9 @@ const buildMap = (mapElement) => {
         element.style.height = '25px';
 
         // Pass the element as an argument to the new marker
-        new mapboxgl.Marker()
+        new mapboxgl.Marker(element)
             .setLngLat([ marker.lng, marker.lat ])
+            .setPopup(popup)
             .addTo(map);
     });
   };
@@ -42,8 +42,8 @@ const buildMap = (mapElement) => {
     if (mapElement) {
       const map = buildMap(mapElement);
       const markers = JSON.parse(mapElement.dataset.markers);
-      map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl }));
+    //   map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+    //     mapboxgl: mapboxgl }));
       addMarkersToMap(map, markers);
       fitMapToMarkers(map, markers);
     }

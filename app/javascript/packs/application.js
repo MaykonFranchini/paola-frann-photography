@@ -28,6 +28,7 @@ import "flatpickr/dist/flatpickr.css";
 import { loadDynamicBannerText } from '../plugins/typed';
 import { initFlatpickr } from "../plugins/init_flatpickr";
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -45,4 +46,8 @@ document.addEventListener('turbolinks:load', () => {
 });
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+});
+document.addEventListener('turbolinks:load', () => {
+// used to autocomplete address when creating a new studio
+  initAutocomplete();
 });

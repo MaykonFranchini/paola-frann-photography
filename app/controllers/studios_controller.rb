@@ -7,8 +7,8 @@ class StudiosController < ApplicationController
           {
             lat: studio.latitude,
             lng: studio.longitude,
-            info_window: render_to_string(partial: "info_window", locals: { studio: studio }),
-            image_url: helpers.asset_url('placeholder.jpeg')
+            info_window: render_to_string(partial: "/studios/info_window", locals: { studio: studio }),
+            image_url: helpers.asset_url('camera.png')
           }
         end
     end
