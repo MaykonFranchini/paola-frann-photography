@@ -1,0 +1,8 @@
+<div class="studio-new">
+    <%= simple_form_for (@studio) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address, id:"studio_address" %>
+        <%= f.input :photo, as: :file %>
+        <%= f.button :submit %>
+    <% end %>
+</div>
