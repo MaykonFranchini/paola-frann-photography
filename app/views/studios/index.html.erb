@@ -1,31 +1,41 @@
 <div class="studio-index">
     <div class="container">
         <h1 class="text-center">Find a studio near you</h1>
-        <div>
+        <div class="studio-search">
+            <div class="studio-search-result">
             <%= form_tag studios_path, method: :get do %>
                 <%= text_field_tag :query,
                 params[:query],
-                class: "form-control",
+                class: "form-control search-bar",
                 placeholder: "Find a studio"
                 %>
-                <%= submit_tag "Search", class: "btn btn-primary" %>
+                <%= submit_tag "Search", class: "btn-invisible" %>
             <% end %>
-            <div>
-                <% if @studio.count == 0 %>
-                    <h2>Sorry, There is no studios near you. Check on the map ours studios locations</h2>
-                <% else %>
+            
+                <% if @studio.nil? %>
+                    <% elsif  @studio.size == 0 %>
+                    <h3>Sorry, There is no studios near you. Check on the map ours studios locations</h3>
+                    <% else %>
                 <% @studio.each do |studio| %>
-                    <h4><%= studio.name %></h4>
-                    <p><%= studio.address %></p>
+                    <%= link_to books_path, class: "link-books" do %>
+                    <div class="card-studio">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="card-studio-content">
+                            <h4><%= studio.name %></h4>
+                            <p><%= studio.address %></p>
+                        <% end %>
+                    </div>
+                    </div>
                 <% end %>
                 <% end %>
             </div>
-        </div>
-
-        <div id="map"
+            <div id="map"
             style="width: 100%; height: 600px;"
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
+        </div>
+
+        
     </div>
 </div>
