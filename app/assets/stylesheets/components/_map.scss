@@ -1,3 +1,6 @@
+#map {
+  border-radius: 10px;
+}
 .mapboxgl-popup {
     max-width: 200px;
   }
@@ -9,4 +12,17 @@
 
   .suggestions li {
     font-size: 12px;
+  }
+
+
+  .studio-search {
+    display: flex;
+  }
+  .studio-search-result {
+    padding: 30px;
+    width:100%;
+  }
+
+  .search-bar {
+    border-radius: 10px;
   }
