@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="book-new">
+    <%= simple_form_for (@book) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.input :sku %>
+        <%= f.input :price_cents %>
+        <%= f.input :delivery_estimate %>
+        <%= f.button :submit %>
+    <% end %>
+    </div>
+</div>

@@ -2,15 +2,13 @@
     <div class= "container">
         <h1 class="show-title"><%= @book.name %></h1>
         <div class="details">
-        <div class="main-img">
-            <img class="d-block w-100" src="https://picsum.photos/id/1027/500/300" alt="Book">
-            <div class="small-images">
-                <img class="d-block w-100" src="https://picsum.photos/id/1027/500/300" alt="Book">
-                <img class="d-block w-100" src="https://picsum.photos/id/1027/500/300" alt="Book">
-                <img class="d-block w-100" src="https://picsum.photos/id/1027/500/300" alt="Book">
-                <img class="d-block w-100" src="https://picsum.photos/id/1027/500/300" alt="Book">
-            </div>
-        </div>
+        <div class="small-images">
+            <% @book.photos.each_with_index do |photo, index| %>
+                <div class='photo-<%= index %>' >
+                <%= cl_image_tag photo.key %>
+                </div>
+            <% end %>
+    </div>
 
         <div class="description">
             <div class="description-text">
